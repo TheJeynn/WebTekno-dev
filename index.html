@@ -17,13 +17,14 @@
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://i.imgur.com/5XZJQ7a.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+                        url('Ekran görüntüsü 2025-05-10 202705.png') center/cover no-repeat;
             height: 60vh;
             margin-top: -56px;
-            color: white;
+            color: black; /* Yazı rengi siyah */
             display: flex;
             align-items: center;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8); /* Yazı okunaklılığı için gölge */
         }
         
         .card-img-custom {
@@ -106,7 +107,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Üst Kısım) -->
     <header class="hero-section">
         <div class="container text-center">
             <h1 class="display-4 fw-bold mb-3">ŞANLIURFA</h1>
@@ -115,113 +116,56 @@
     </header>
 
     <!-- Hakkımda -->
-    <section id="hakkimda" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="text-center mb-5">Hakkımda</h2>
-                    <div class="card shadow-sm info-card">
-                        <div class="card-body p-4">
-                            <h3 class="card-title mb-4">Burak Kahveci</h3>
-                            <h6 class="card-subtitle mb-4 text-muted">Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi</h6>
-                            <hr>
-                            <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3"><strong><i class="bi bi-telephone-fill me-2"></i>Telefon:</strong> 0534 213 80 63</li>
-                                        <li class="mb-3"><strong><i class="bi bi-envelope-fill me-2"></i>E-posta:</strong> burak.kahveci1@ogr.sakarya.edu.tr</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3"><strong><i class="bi bi-geo-alt-fill me-2"></i>Memleket:</strong> Şanlıurfa</li>
-                                        <li class="mb-3"><strong><i class="bi bi-code-slash me-2"></i>Yetenekler:</strong> HTML, CSS, JavaScript, C++, C#</li>
-                                    </ul>
-                                </div>
+<section id="hakkimda" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-center mb-5">Hakkımda</h2>
+                <div class="card shadow-sm info-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title mb-4">Burak Kahveci</h3>
+                        <h6 class="card-subtitle mb-4 text-muted">Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi</h6>
+                        <hr>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3"><strong><i class="bi bi-telephone-fill me-2"></i>Telefon:</strong> 0534 213 80 63</li>
+                                    <li class="mb-3"><strong><i class="bi bi-envelope-fill me-2"></i>E-posta:</strong> burak.kahveci1@ogr.sakarya.edu.tr</li>
+                                </ul>
                             </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3"><strong><i class="bi bi-geo-alt-fill me-2"></i>Memleket:</strong> Şanlıurfa</li>
+                                    <li class="mb-3"><strong><i class="bi bi-code-slash me-2"></i>Yetenekler:</strong> HTML, CSS, JavaScript, C++, C#</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="Hakkımda.html" target="_blank" class="btn btn-urfa">
+                                <i class="bi bi-box-arrow-up-right me-2"></i>Detaylı Bilgi
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Şanlıurfa -->
     <section id="urfa" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Şanlıurfa</h2>
-            
-            <!-- Peygamberler Şehri Section -->
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-10">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
                     <div class="card shadow-sm info-card">
-                        <div class="card-body p-4">
-                            <h3 class="card-title text-center mb-4"><i class="bi bi-stars prophet-icon"></i>Peygamberler Şehri<i class="bi bi-stars prophet-icon"></i></h3>
-                            <p class="card-text text-center lead">
-                                Şanlıurfa, "Peygamberler Şehri" olarak bilinir ve burada Hz. İbrahim, Hz. Eyyüp, 
-                                Hz. Şuayb, Hz. Elyasa gibi peygamberlerin yaşadığına inanılır. Ayrıca Hz. Adem'den 
-                                itibaren pek çok peygamberin de Şanlıurfa'ya bağlandığı rivayet edilir.
+                        <div class="card-body p-5">
+                            <h2 class="mb-4"><i class="bi bi-geo-alt-fill prophet-icon"></i> ŞANLIURFA</h2>
+                            <p class="lead mb-4">
+                                Peygamberler Şehri'ni keşfetmek için tıklayın
                             </p>
-                             <div class="row mt-4 text-center">
-                                <div class="col-md-3">
-                                    <a href="https://www.google.com/search?q=Hz.+İbrahim" target="_blank" class="text-decoration-none">
-                                        <p><i class="bi bi-person-fill prophet-icon"></i>Hz. İbrahim</p>
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="https://www.google.com/search?q=Hz.+Eyyüp" target="_blank" class="text-decoration-none">
-                                        <p><i class="bi bi-person-fill prophet-icon"></i>Hz. Eyyüp</p>
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="https://www.google.com/search?q=Hz.+Şuayb" target="_blank" class="text-decoration-none">
-                                        <p><i class="bi bi-person-fill prophet-icon"></i>Hz. Şuayb</p>
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="https://www.google.com/search?q=Hz.+Elyasa" target="_blank" class="text-decoration-none">
-                                        <p><i class="bi bi-person-fill prophet-icon"></i>Hz. Elyasa</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Balıklıgöl -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm info-card">
-                        <img src="Ekran görüntüsü 2025-05-09 152026.png" class="card-img-top card-img-custom" alt="Balıklıgöl">
-                        <div class="card-body">
-                            <h5 class="card-title">Balıklıgöl</h5>
-                            <p class="card-text">Hz. İbrahim'in ateşe atıldığında düştüğü mucizevi göl. Şanlıurfa'nın kalbinde yer alan bu kutsal mekan, her yıl binlerce ziyaretçi çekmektedir.</p>
-                            <span class="img-credit">Kaynak: Kültür Portalı</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Göbeklitepe -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm info-card">
-                        <img src="Ekran görüntüsü 2025-05-09 152720.png" class="card-img-top card-img-custom" alt="Göbeklitepe">
-                        <div class="card-body">
-                            <h5 class="card-title">Göbeklitepe</h5>
-                            <p class="card-text">Dünyanın bilinen en eski tapınağı. MÖ 10.000 yılına tarihlenen bu arkeolojik site, insanlık tarihini yeniden yazdırmıştır.</p>
-                            <span class="img-credit">Kaynak: Antonia Turizm</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Urfa Kebabı -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm info-card">
-                        <img src="Ekran görüntüsü 2025-05-09 153505.png" class="card-img-top card-img-custom" alt="Urfa Kebabı">
-                        <div class="card-body">
-                            <h5 class="card-title">Urfa Kebabı</h5>
-                            <p class="card-text">Şanlıurfa'ya özgü eşsiz lezzet. Özel baharatlarla hazırlanan bu kebap, Türk mutfağının en önemli lezzetlerinden biridir.</p>
-                            <span class="img-credit">Kaynak: Topkapı Lounge</span>
+                            <a href="Şanlıurfa.html" target="_blank" class="btn btn-urfa btn-lg">
+                                <i class="bi bi-box-arrow-up-right"></i> Tam Sayfa Aç
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -256,23 +200,23 @@
     </section>
 
     <!-- Footer -->
-<footer class="text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 text-md-start mb-3 mb-md-0">
-                <h5>Burak Kahveci</h5>
-                <p class="mb-0">Sakarya Üniversitesi Bilgisayar Mühendisliği</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <div class="social-links mb-3">
-                    <a href="https://github.com/TheJeynn" target="_blank" class="text-white me-3"><i class="bi bi-github"></i></a>
-                    <a href="https://instagram.com/burak_kahveci00" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-start mb-3 mb-md-0">
+                    <h5>Burak Kahveci</h5>
+                    <p class="mb-0">Sakarya Üniversitesi Bilgisayar Mühendisliği</p>
                 </div>
-                <p class="mb-0">© 2023 Tüm hakları saklıdır.</p>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links mb-3">
+                        <a href="https://github.com/TheJeynn" target="_blank" class="text-white me-3"><i class="bi bi-github"></i></a>
+                        <a href="https://instagram.com/burak_kahveci00" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <p class="mb-0">© 2023 Tüm hakları saklıdır.</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Bootstrap JS + Özel JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
