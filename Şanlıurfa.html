@@ -69,6 +69,21 @@
             color: #8B4513;
         }
         
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #8B4513;
+            margin: 15px auto;
+        }
+        
         @media (max-width: 768px) {
             .hero-section {
                 height: 30vh;
@@ -98,7 +113,7 @@
         </div>
     </header>
 
-    <!-- Şanlıurfa İçeriği (index.html'den aktarılan kısım) -->
+    <!-- Şanlıurfa İçeriği -->
     <section class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">Şanlıurfa</h2>
@@ -141,6 +156,13 @@
                 </div>
             </div>
             
+            <!-- Birleştirilmiş Gezilecek Yerler ve Lezzetler Section -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="section-title">Gezilecek Yerler ve Lezzetler</h3>
+                </div>
+            </div>
+            
             <div class="row g-4">
                 <!-- Balıklıgöl -->
                 <div class="col-md-4">
@@ -166,6 +188,54 @@
                     </div>
                 </div>
                 
+                <!-- Bakırcılar Çarşısı -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <img src="Ekran görüntüsü 2025-05-12 193446.png" class="card-img-top card-img-custom" alt="Bakırcılar Çarşısı">
+                        <div class="card-body">
+                            <h5 class="card-title">Bakırcılar Çarşısı</h5>
+                            <p class="card-text">Şanlıurfa'nın tarihi çarşısı, el yapımı bakır eşyalar, baharatlar ve yöresel ürünlerle dolu. Geleneksel Urfa kültürünü yakından görebileceğiniz canlı bir mekan.</p>
+                            <span class="img-credit">Kaynak: Kültür Portalı</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Halfeti -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <img src="Ekran görüntüsü 2025-05-12 193947.png" class="card-img-top card-img-custom" alt="Halfeti">
+                        <div class="card-body">
+                            <h5 class="card-title">Halfeti</h5>
+                            <p class="card-text">"Kara Gül" diyarı Halfeti, Fırat Nehri'nin suları altında kalan gizemli şehir. Tekne turlarıyla batık şehri gezebilir, eşsiz manzaralar eşliğinde fotoğraf çekebilirsiniz.</p>
+                            <span class="img-credit">Kaynak: Gezip Gördüm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Atatürk Barajı -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <img src="Ekran görüntüsü 2025-05-12 194116.png" class="card-img-top card-img-custom" alt="Atatürk Barajı">
+                        <div class="card-body">
+                            <h5 class="card-title">Atatürk Barajı</h5>
+                            <p class="card-text">Türkiye'nin en büyük, dünyanın ise sayılı barajlarından biri. Devasa gölü ve enerji üretimiyle bölgenin kalkınmasında önemli rol oynuyor.</p>
+                            <span class="img-credit">Kaynak: DSİ</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sıra Gecesi -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <img src="Ekran görüntüsü 2025-05-12 194239.png" class="card-img-top card-img-custom" alt="Sıra Gecesi">
+                        <div class="card-body">
+                            <h5 class="card-title">Sıra Gecesi</h5>
+                            <p class="card-text">Urfa'ya özgü bu geleneksel eğlence, dost meclislerinde yapılan müzikli ve yemekli toplantılar. Canlı müzik eşliğinde yöresel lezzetler tadılır.</p>
+                            <span class="img-credit">Kaynak: Şanlıurfa Belediyesi</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Urfa Kebabı -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm info-card">
@@ -174,6 +244,30 @@
                             <h5 class="card-title">Urfa Kebabı</h5>
                             <p class="card-text">Şanlıurfa'ya özgü eşsiz lezzet. Özel baharatlarla hazırlanan bu kebap, Türk mutfağının en önemli lezzetlerinden biridir.</p>
                             <span class="img-credit">Kaynak: Topkapı Lounge</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Çiğ Köfte -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <img src="Ekran görüntüsü 2025-05-12 193810.png" class="card-img-top card-img-custom" alt="Çiğ Köfte">
+                        <div class="card-body">
+                            <h5 class="card-title">Çiğ Köfte</h5>
+                            <p class="card-text">Şanlıurfa'nın dünyaca ünlü lezzeti. Bulgur, isot ve özel baharatlarla hazırlanan bu eşsiz tat, Urfa mutfağının vazgeçilmezidir.</p>
+                            <span class="img-credit">Kaynak: Yemek.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Şıllık Tatlısı -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <img src="Ekran görüntüsü 2025-05-12 194351.png" class="card-img-top card-img-custom" alt="Şıllık Tatlısı">
+                        <div class="card-body">
+                            <h5 class="card-title">Şıllık Tatlısı</h5>
+                            <p class="card-text">İnce yufka arasına serpiştirilen ceviz ve tarçınla hazırlanan, üzerine şerbet dökülen nefis bir Urfa tatlısı.</p>
+                            <span class="img-credit">Kaynak: Sabah</span>
                         </div>
                     </div>
                 </div>

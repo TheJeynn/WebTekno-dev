@@ -68,6 +68,24 @@
             border-radius: 5px;
             margin-bottom: 20px;
         }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            background-color: #8B4513;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +101,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#hobbies">Hobilerim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Yetenekler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobbies">Hobiler</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
                 </ul>
             </div>
@@ -124,14 +143,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            
-                            <h3 class="mt-5 mb-3"><i class="bi bi-code-slash contact-icon"></i> Teknik Beceriler</h3>
-                            <ul>
-                                <li>HTML, CSS, JavaScript</li>
-                                <li>C++, C# Programlama</li>
-                                <li>Bootstrap Framework</li>
-                                <li>Web Geliştirme</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -139,8 +150,101 @@
         </div>
     </section>
 
+                <!-- About Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Kendim Hakkında Kartı -->
+                <div class="card shadow-sm info-card">
+                    <div class="card-body p-5">
+                        <h2 class="mb-4"><i class="bi bi-pencil-fill contact-icon"></i> Kendim Hakkında</h2>
+                        <div class="personal-description">
+                            <p class="mb-4">
+                                Merhaba, ben Burak Kahveci. Sakarya Üniversitesi'nde Bilgisayar Mühendisliği öğrencisiyim. 
+                                Yazılım geliştirmeye ve teknolojiye büyük bir ilgi duyuyorum. Özellikle web geliştirme 
+                                alanında kendimi geliştirmeye odaklanıyorum ve bu alanda projeler üretmekten keyif alıyorum.
+                            </p>
+                            <p class="mb-4">
+                                Şanlıurfa doğumluyum ve kültürel zenginliklerin getirdiği farklı bakış açılarını 
+                                yazılım projelerime yansıtmaya çalışıyorum. Boş zamanlarımda satranç oynamayı, yeni 
+                                programlama dilleri öğrenmeyi ve açık kaynak projelere katkıda bulunmayı seviyorum.
+                            </p>
+                            <p>
+                                Gelecek hedeflerim arasında yapay zeka ve makine öğrenmesi alanlarında uzmanlaşmak ve 
+                                kullanıcı deneyimini iyileştiren yenilikçi projeler geliştirmek bulunuyor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+<section id="skills" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm info-card">
+                    <div class="card-body p-5">
+                        <h2 class="mb-4">
+                            <i class="bi bi-code-slash contact-icon"></i> Yetenekler
+                        </h2>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i> HTML & CSS
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i> JavaScript
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i> C++
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i> C#
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i> Bootstrap
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i> Web Geliştirme
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i> PHP
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- Hobbies Section -->
-    <section id="hobbies" class="py-5 bg-light">
+    <section id="hobbies" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -148,8 +252,8 @@
                         <div class="card-body p-5">
                             <h2 class="mb-4"><i class="bi bi-heart-fill contact-icon"></i> Hobilerim</h2>
                             <ul>
-                                <li>Satranç oynamak</li>
-                                <li>Oyun Oynamak</li>
+                                <li>Satranç Oynamak</li>
+                                <li>Video Oyunları Oynamak</li>
                                 <li>Müzik Dinlemek</li>
                                 <li>Yazılım Geliştirme</li>
                             </ul>
@@ -161,7 +265,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -197,7 +301,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Age Calculator and Hobbies Edit Script -->
+    <!-- Age Calculator Script -->
     <script>
         // Yaş hesaplama
         function calculateAge(birthDate) {
@@ -215,15 +319,6 @@
         
         // Yaşı göster
         document.getElementById('age').textContent = calculateAge('2007-01-07');
-        
-        // Hobileri düzenleme fonksiyonu (örnek)
-        function editHobbies() {
-            const newHobby = prompt("Yeni hobi ekleyin veya mevcut hobileri düzenleyin (virgülle ayırarak):", "Yazılım Geliştirme, Oyun Oynamak, Müzik Dinlemek");
-            if (newHobby) {
-                alert("Hobileriniz güncellendi! (Bu örnekte sadece gösterim amaçlıdır, gerçekte değişiklik yapmak için kodu düzenlemeniz gerekir)");
-                console.log("Yeni hobiler:", newHobby);
-            }
-        }
     </script>
 </body>
 </html>
