@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Sayfası</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-card {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            max-width: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+        <h3 class="text-center mb-4">Giriş Yap</h3>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">E-posta</label>
+                <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Şifre</label>
+                <input type="password" class="form-control" id="password" placeholder="Şifrenizi girin" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+        </form>
+        <div id="loginMessage" class="mt-3 text-center"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const messageBox = document.getElementById('loginMessage');
+
+        const atIndex = email.indexOf('@');
+
+        if (atIndex === -1) {
+            messageBox.innerHTML = "<span class='text-danger'>Geçersiz e-posta adresi.</span>";
+            return;
+        }
+
+        const expectedPassword = email.substring(0, atIndex);
+
+        if (password === expectedPassword) {
+            messageBox.innerHTML = "<span class='text-success'>Giriş başarılı! Yönlendiriliyorsunuz...</span>";
+            setTimeout(() => {
+                window.location.href = "index.html"; // Giriş başarılıysa yönlendir
+            }, 1000);
+        } else {
+            messageBox.innerHTML = "<span class='text-danger'>Hatalı şifre. Şifre e-posta adresinin '@' öncesi olmalı.</span>";
+        }
+    });
+</script>
+
+</body>
+</html>
