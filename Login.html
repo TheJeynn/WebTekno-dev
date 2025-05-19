@@ -23,6 +23,11 @@
             max-width: 400px;
             width: 100%;
         }
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -30,47 +35,70 @@
 <div class="login-container">
     <div class="login-card">
         <h3 class="text-center mb-4">Giriş Yap</h3>
-        <form id="loginForm">
+        <form id="loginForm" action="login.php" method="POST">
             <div class="mb-3">
-                <label for="email" class="form-label">E-posta</label>
-                <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin" required>
+                <label for="username" class="form-label">Öğrenci E-posta</label>
+                <input type="text" class="form-control" id="username" name="username" 
+                       placeholder="b1812100001@sakarya.edu.tr" required>
+                <div id="emailError" class="error-message"></div>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Şifre</label>
-                <input type="password" class="form-control" id="password" placeholder="Şifrenizi girin" required>
+                <input type="password" class="form-control" id="password" name="password" 
+                       placeholder="Öğrenci numaranız (b1812100001)" required>
+                <div id="passwordError" class="error-message"></div>
             </div>
             <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
-        </form>
-        <div id="loginMessage" class="mt-3 text-center"></div>
+            </form>
     </div>
 </div>
 
 <script>
     document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const email = document.getElementById('email').value.trim();
+        const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value.trim();
-        const messageBox = document.getElementById('loginMessage');
-
-        const atIndex = email.indexOf('@');
-
-        if (atIndex === -1) {
-            messageBox.innerHTML = "<span class='text-danger'>Geçersiz e-posta adresi.</span>";
-            return;
-        }
-
-        const expectedPassword = email.substring(0, atIndex);
-
-        if (password === expectedPassword) {
-            messageBox.innerHTML = "<span class='text-success'>Giriş başarılı! Yönlendiriliyorsunuz...</span>";
-            setTimeout(() => {
-                window.location.href = "index.html"; // Giriş başarılıysa yönlendir
-            }, 1000);
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        
+        let isValid = true;
+        
+        // Kullanıcı adı kontrolü
+        if(username === '') {
+            emailError.textContent = 'E-posta alanı boş bırakılamaz';
+            isValid = false;
+        } else if(!isValidEmail(username)) {
+            emailError.textContent = 'Geçerli bir sakarya.edu.tr e-posta adresi girin';
+            isValid = false;
         } else {
-            messageBox.innerHTML = "<span class='text-danger'>Hatalı şifre. Şifre e-posta adresinin '@' öncesi olmalı.</span>";
+            emailError.textContent = '';
+        }
+        
+        // Şifre kontrolü
+        if(password === '') {
+            passwordError.textContent = 'Şifre alanı boş bırakılamaz';
+            isValid = false;
+        } else {
+            passwordError.textContent = '';
+        }
+        
+        // Şifrenin kullanıcı adının domain öncesi kısmıyla eşleşmesi kontrolü
+        if(isValid) {
+            const usernamePart = username.split('@')[0];
+            if(password !== usernamePart) {
+                passwordError.textContent = 'Şifre öğrenci numaranız olmalıdır (b1812100001)';
+                isValid = false;
+            }
+        }
+        
+        if(!isValid) {
+            e.preventDefault();
         }
     });
+    
+    function isValidEmail(email) {
+        const regex = /^[a-zA-Z][a-zA-Z0-9]{10}@sakarya\.edu\.tr$/;
+        return regex.test(email);
+    }
 </script>
 
 </body>
