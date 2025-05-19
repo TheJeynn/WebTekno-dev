@@ -1,14 +1,4 @@
-﻿/****************************************************************************
-** SAKARYA ÜNİVERSİTESİ                                                    **
-** BİLGİSAYAR VE BİLİŞİM BİLİMLERİ FAKÜLTESİ                               **
-** BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ                                          **
-** PROGRAMLAMAYA GİRİŞİ DERSİ                                              **
-**                                                                         **
-** ÖDEV NUMARASI......:2                                                   **
-** ÖĞRENCİ ADI........:Burak Kahveci                                       **
-** ÖĞRENCİ NUMARASI...:b241210084                                          **
-** DERS GRUBU.........:A                                                   **
-****************************************************************************/
+﻿
 #include <iostream> // Giriş çıkış işlemleri için gerekli kütüphane
 #include <vector>   // Vektör veri yapısı için gerekli kütüphane
 #include <locale.h> // Dil ayarları için gerekli kütüphane

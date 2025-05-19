@@ -1,14 +1,4 @@
-﻿/****************************************************************************
-**                  SAKARYA ÜNİVERSİTESİ                                   **
-**                   BİLGİSAYAR VE BİLİŞİM BİLİMLERİ FAKÜLTESİ             **
-**                  BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ                         **
-**                        PROGRAMLAMAYA GİRİŞİ DERSİ                       **
-**                                                                         **
-**              ÖDEV NUMARASI…...:1                                        **
-**              ÖĞRENCİ ADI......:Burak Kahveci                            **
-**              ÖĞRENCİ NUMARASI.:b241210084                               **
-**              DERS GRUBU.......:A                                        **
-*****************************************************************************/
+﻿
 #include <iostream> // Standart giriş/çıkış işlemleri için gerekli
 #include <string>   // Yazı formatındaki veriler için gerekli
 #include <cstdlib>  // Rastgele sayı üretimi için gerekli
