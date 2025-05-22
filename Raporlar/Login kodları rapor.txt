@@ -1,0 +1,19 @@
+1. Kodun Genel İşlevi
+Bu PHP kodu, bir giriş formundan (login.html) gelen POST isteklerini işler ve kullanıcı doğrulaması yapar. Temel işlevleri:
+
+Kullanıcı adı (e-posta) ve şifre kontrolü yapar.
+
+Geçersiz girişlerde kullanıcıyı hata mesajıyla login sayfasına yönlendirir.
+
+Başarılı girişte hoşgeldin mesajı gösterir.
+
+2. PHP ile Backend Validasyon
+$_SERVER["REQUEST_METHOD"] ile sadece POST istekleri kabul edilir.
+
+filter_var($username, FILTER_VALIDATE_EMAIL) → E-posta formatını kontrol eder.
+
+preg_match() → Sakarya Üniversitesi e-posta formatını regex ile doğrular.
+
+explode('@', $username)[0] → Kullanıcı adının domain öncesi kısmını alır.
+
+header("Location: ...") → Hatalı girişlerde kullanıcıyı login sayfasına yönlendirir.

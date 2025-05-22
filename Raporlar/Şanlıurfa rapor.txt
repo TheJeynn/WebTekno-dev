@@ -1,0 +1,53 @@
+1. Temel Yapı
+DOCTYPE: HTML5 belirtimi kullanılmış
+
+Dil: Türkçe (lang="tr") olarak ayarlanmış
+
+Responsive Tasarım: Viewport meta etiketi ile mobil uyumluluk sağlanmış
+
+2. Başlık ve Meta Bilgileri
+Sayfa başlığı: "Şanlıurfa | Peygamberler Şehri"
+
+UTF-8 karakter kodlaması kullanılmış
+
+Bootstrap 5 CSS ve Bootstrap Icons dahil edilmiş
+
+Tasarım ve Stil
+1. CSS Özellikleri
+Renk Şeması: Kahverengi tonları (#8B4513) ve Bootstrap renkleri kullanılmış
+
+Tipografi: Arial font ailesi tercih edilmiş
+
+Responsive Tasarım: Media query'lerle mobil uyum sağlanmış
+
+2. Bileşenler
+Hero Section: Arka plan resimli başlık bölümü
+
+Card Yapıları: Bilgi kartları hover efektleriyle tasarlanmış
+
+Carousel: Fotoğraf slider'ı eklenmiş
+
+Navbar: Sabit üst navigasyon çubuğu
+
+İçerik Bölümleri
+1. Peygamberler Şehri
+Hz. İbrahim, Hz. Eyyüp, Hz. Şuayb ve Hz. Elyasa gibi peygamberlerin Şanlıurfa ile bağlantıları anlatılmış
+
+Peygamberler için özel ikonlar ve bağlantılar eklenmiş
+
+2. Gezilecek Yerler ve Lezzetler
+Turistik Mekanlar: Balıklıgöl, Göbeklitepe, Bakırcılar Çarşısı, Halfeti, Atatürk Barajı
+
+Yöresel Lezzetler: Urfa Kebabı, Çiğ Köfte, Şıllık Tatlısı
+
+Kültürel Etkinlikler: Sıra Gecesi geleneği
+
+3. Temel Bilgiler
+Nüfus, coğrafi bilgiler, futbol takımı
+
+UNESCO Kültürel Mirasları listesi
+
+4. Özel Bölümler
+Kommagene Krallığı ve Nemrut efsanesi
+
+Fotoğraf slider'ı ile mutfak kültürü tanıtımı

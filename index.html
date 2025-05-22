@@ -18,13 +18,13 @@
         
         .hero-section {
             background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
-                        url('Ekran görüntüsü 2025-05-10 202705.png') center/cover no-repeat;
+                        url('Ekran görüntüsü 2025-05-10 202705.png') center/cover no-repeat; /* Resim yolunu kontrol edin */
             height: 60vh;
             margin-top: -56px;
-            color: black; /* Yazı rengi siyah */
+            color: black;
             display: flex;
             align-items: center;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8); /* Yazı okunaklılığı için gölge */
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
         }
         
         .card-img-custom {
@@ -76,6 +76,47 @@
             color: #8B4513;
         }
         
+        /* Movie Cards CSS */
+        .movie-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .movie-poster {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .movie-info {
+            padding: 15px;
+        }
+        
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .rating i {
+            color: gold;
+            margin-right: 5px;
+        }
+        
+        #loading-spinner {
+            width: 3rem;
+            height: 3rem;
+        }
+        
         @media (max-width: 768px) {
             .hero-section {
                 height: 40vh;
@@ -83,6 +124,10 @@
             
             .card-img-custom {
                 height: 180px;
+            }
+            
+            .movie-poster {
+                height: 300px;
             }
         }
     </style>
@@ -94,13 +139,14 @@
             <a class="navbar-brand" href="#">
                 <i class="bi bi-geo-alt-fill me-2"></i>Burak Kahveci
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#hakkimda">Hakkımda</a></li>
                     <li class="nav-item"><a class="nav-link" href="#urfa">Şanlıurfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#filmler">Filmler</a></li>
                     <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
                 </ul>
             </div>
@@ -116,41 +162,41 @@
     </header>
 
     <!-- Hakkımda -->
-<section id="hakkimda" class="py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h2 class="text-center mb-5">Hakkımda</h2>
-                <div class="card shadow-sm info-card">
-                    <div class="card-body p-4">
-                        <h3 class="card-title mb-4">Burak Kahveci</h3>
-                        <h6 class="card-subtitle mb-4 text-muted">Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi</h6>
-                        <hr>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><strong><i class="bi bi-telephone-fill me-2"></i>Telefon:</strong> 0534 213 80 63</li>
-                                    <li class="mb-3"><strong><i class="bi bi-envelope-fill me-2"></i>E-posta:</strong> burak.kahveci1@ogr.sakarya.edu.tr</li>
-                                </ul>
+    <section id="hakkimda" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-5">Hakkımda</h2>
+                    <div class="card shadow-sm info-card">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-4">Burak Kahveci</h3>
+                            <h6 class="card-subtitle mb-4 text-muted">Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi</h6>
+                            <hr>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3"><strong><i class="bi bi-telephone-fill me-2"></i>Telefon:</strong> 0534 213 80 63</li>
+                                        <li class="mb-3"><strong><i class="bi bi-envelope-fill me-2"></i>E-posta:</strong> burak.kahveci1@ogr.sakarya.edu.tr</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3"><strong><i class="bi bi-geo-alt-fill me-2"></i>Memleket:</strong> Şanlıurfa</li>
+                                        <li class="mb-3"><strong><i class="bi bi-code-slash me-2"></i>Yetenekler:</strong> HTML, CSS, JavaScript, C++, C#</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><strong><i class="bi bi-geo-alt-fill me-2"></i>Memleket:</strong> Şanlıurfa</li>
-                                    <li class="mb-3"><strong><i class="bi bi-code-slash me-2"></i>Yetenekler:</strong> HTML, CSS, JavaScript, C++, C#</li>
-                                </ul>
+                            <div class="text-center mt-4">
+                                <a href="Hakkımda.html" target="_blank" class="btn btn-urfa">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>Detaylı Bilgi
+                                </a>
                             </div>
-                        </div>
-                        <div class="text-center mt-4">
-                            <a href="Hakkımda.html" target="_blank" class="btn btn-urfa">
-                                <i class="bi bi-box-arrow-up-right me-2"></i>Detaylı Bilgi
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Şanlıurfa -->
     <section id="urfa" class="py-5 bg-light">
@@ -173,268 +219,124 @@
         </div>
     </section>
 
-    <!-- İletişim -->
-<section id="iletisim" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">İletişim</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div id="app" class="card shadow-sm p-4 info-card">
-                    <form @submit.prevent="submitForm" id="contactForm">
-                        <!-- Basic Information -->
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Adınız</label>
-                            <input type="text" class="form-control" id="name" v-model="form.name" placeholder="Adınız ve soyadınız">
-                            <span class="text-danger" v-if="errors.name">{{ errors.name }}</span>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="email" class="form-label">E-posta</label>
-                            <input type="email" class="form-control" id="email" v-model="form.email" placeholder="E-posta adresiniz">
-                            <span class="text-danger" v-if="errors.email">{{ errors.email }}</span>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Telefon</label>
-                            <input type="tel" class="form-control" id="phone" v-model="form.phone" placeholder="Telefon numaranız">
-                            <span class="text-danger" v-if="errors.phone">{{ errors.phone }}</span>
-                        </div>
-                        
-                        <!-- Gender Radio Buttons -->
-                        <div class="mb-3">
-                            <label class="form-label">Cinsiyet</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="male" value="male" v-model="form.gender">
-                                <label class="form-check-label" for="male">Erkek</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="female" value="female" v-model="form.gender">
-                                <label class="form-check-label" for="female">Kadın</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="other" value="other" v-model="form.gender">
-                                <label class="form-check-label" for="other">Diğer</label>
-                            </div>
-                            <span class="text-danger" v-if="errors.gender">{{ errors.gender }}</span>
-                        </div>
-                        
-                        <!-- Age Select -->
-                        <div class="mb-3">
-                            <label for="age" class="form-label">Yaş Aralığı</label>
-                            <select class="form-select" id="age" v-model="form.age">
-                                <option value="" disabled selected>Seçiniz</option>
-                                <option value="18-25">18-25</option>
-                                <option value="26-35">26-35</option>
-                                <option value="36-45">36-45</option>
-                                <option value="46+">46+</option>
-                            </select>
-                            <span class="text-danger" v-if="errors.age">{{ errors.age }}</span>
-                        </div>
-                        
-                        <!-- Checkbox -->
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="newsletter" v-model="form.newsletter">
-                            <label class="form-check-label" for="newsletter">Bültenimize kayıt olmak istiyorum</label>
-                        </div>
-                        
-                        <!-- Message Textarea -->
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mesajınız</label>
-                            <textarea class="form-control" id="message" rows="5" v-model="form.message" placeholder="Mesajınızı buraya yazın"></textarea>
-                            <span class="text-danger" v-if="errors.message">{{ errors.message }}</span>
-                        </div>
-                        
-                        <!-- File Upload -->
-                        <div class="mb-3">
-                            <label for="file" class="form-label">Dosya Yükle (Opsiyonel)</label>
-                            <input type="file" class="form-control" id="file" @change="handleFileUpload">
-                            <span class="text-danger" v-if="errors.file">{{ errors.file }}</span>
-                        </div>
-                        
-                        <!-- Validation Buttons -->
-                        <div class="d-flex gap-2">
-                            <button type="button" class="btn btn-secondary btn-lg flex-grow-1" @click="validateBasic">Temel Doğrulama</button>
-                            <button type="button" class="btn btn-info btn-lg flex-grow-1" @click="validateAdvanced">Gelişmiş Doğrulama</button>
-                        </div>
-                        
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-urfa btn-lg w-100 mt-2">Gönder</button>
-                    </form>
-                    
-                    <!-- Validation Results -->
-                    <div v-if="validationResults" class="mt-3 p-3" :class="{'bg-success text-white': validationResults.isValid, 'bg-danger text-white': !validationResults.isValid}">
-                        <h5>Doğrulama Sonuçları:</h5>
-                        <ul>
-                            <li v-for="(result, field) in validationResults.details" :key="field">
-                                {{ field }}: {{ result.valid ? 'Geçerli' : 'Geçersiz' }} - {{ result.message }}
-                            </li>
-                        </ul>
+    <!-- Filmler Bölümü -->
+    <section id="filmler" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Popüler Filmler</h2>
+            <div class="row" id="movies-container">
+                <!-- Filmler buraya dinamik olarak eklenecek -->
+                <div class="col-12 text-center">
+                    <div class="spinner-border text-primary" role="status" id="loading-spinner">
+                        <span class="visually-hidden">Yükleniyor...</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Vue.js Implementation -->
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-const { createApp } = Vue;
-
-createApp({
-    data() {
-        return {
-            form: {
-                name: '',
-                email: '',
-                phone: '',
-                gender: '',
-                age: '',
-                newsletter: false,
-                message: '',
-                file: null
-            },
-            errors: {},
-            validationResults: null
-        };
-    },
-    methods: {
-        handleFileUpload(event) {
-            this.form.file = event.target.files[0];
-        },
-        validateBasic() {
-            this.errors = {};
-            let isValid = true;
-            
-            // Name validation
-            if (!this.form.name) {
-                this.errors.name = 'Ad alanı zorunludur';
-                isValid = false;
-            } else if (this.form.name.length < 3) {
-                this.errors.name = 'Ad en az 3 karakter olmalıdır';
-                isValid = false;
-            }
-            
-            // Email validation
-            if (!this.form.email) {
-                this.errors.email = 'E-posta alanı zorunludur';
-                isValid = false;
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) {
-                this.errors.email = 'Geçerli bir e-posta adresi girin';
-                isValid = false;
-            }
-            
-            this.showValidationResults('basic', isValid);
-        },
-        validateAdvanced() {
-            this.errors = {};
-            let isValid = true;
-            
-            // Name validation
-            if (!this.form.name) {
-                this.errors.name = 'Ad alanı zorunludur';
-                isValid = false;
-            }
-            
-            // Email validation
-            if (!this.form.email) {
-                this.errors.email = 'E-posta alanı zorunludur';
-                isValid = false;
-            }
-            
-            // Phone validation
-            if (!this.form.phone) {
-                this.errors.phone = 'Telefon alanı zorunludur';
-                isValid = false;
-            } else if (!/^[0-9]{10,}$/.test(this.form.phone)) {
-                this.errors.phone = 'Geçerli bir telefon numarası girin';
-                isValid = false;
-            }
-            
-            // Gender validation
-            if (!this.form.gender) {
-                this.errors.gender = 'Cinsiyet seçimi zorunludur';
-                isValid = false;
-            }
-            
-            // Age validation
-            if (!this.form.age) {
-                this.errors.age = 'Yaş aralığı seçimi zorunludur';
-                isValid = false;
-            }
-            
-            // Message validation
-            if (!this.form.message) {
-                this.errors.message = 'Mesaj alanı zorunludur';
-                isValid = false;
-            } else if (this.form.message.length < 10) {
-                this.errors.message = 'Mesaj en az 10 karakter olmalıdır';
-                isValid = false;
-            }
-            
-            this.showValidationResults('advanced', isValid);
-        },
-        showValidationResults(type, isValid) {
-            this.validationResults = {
-                type,
-                isValid,
-                details: {
-                    name: {
-                        valid: !!this.form.name && this.form.name.length >= 3,
-                        message: this.form.name ? 'Geçerli' : 'Ad alanı zorunludur'
-                    },
-                    email: {
-                        valid: !!this.form.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email),
-                        message: this.form.email ? (this.errors.email || 'Geçerli') : 'E-posta alanı zorunludur'
-                    },
-                    phone: {
-                        valid: type === 'advanced' ? (!!this.form.phone && /^[0-9]{10,}$/.test(this.form.phone)) : true,
-                        message: type === 'advanced' ? (this.form.phone ? (this.errors.phone || 'Geçerli') : 'Telefon alanı zorunludur') : 'Temel doğrulamada kontrol edilmedi'
-                    },
-                    gender: {
-                        valid: type === 'advanced' ? !!this.form.gender : true,
-                        message: type === 'advanced' ? (this.form.gender ? 'Geçerli' : 'Cinsiyet seçimi zorunludur') : 'Temel doğrulamada kontrol edilmedi'
-                    },
-                    age: {
-                        valid: type === 'advanced' ? !!this.form.age : true,
-                        message: type === 'advanced' ? (this.form.age ? 'Geçerli' : 'Yaş aralığı seçimi zorunludur') : 'Temel doğrulamada kontrol edilmedi'
-                    },
-                    message: {
-                        valid: type === 'advanced' ? (!!this.form.message && this.form.message.length >= 10) : true,
-                        message: type === 'advanced' ? (this.form.message ? (this.errors.message || 'Geçerli') : 'Mesaj alanı zorunludur') : 'Temel doğrulamada kontrol edilmedi'
-                    }
-                }
-            };
-        },
-        submitForm() {
-            // Perform full validation before submit
-            this.validateAdvanced();
-            
-            if (this.validationResults.isValid) {
-                // Form submission logic would go here
-                alert('Form başarıyla gönderildi!');
-                console.log('Form Data:', this.form);
-                
-                // Reset form after submission
-                this.form = {
-                    name: '',
-                    email: '',
-                    phone: '',
-                    gender: '',
-                    age: '',
-                    newsletter: false,
-                    message: '',
-                    file: null
-                };
-                this.errors = {};
-                this.validationResults = null;
-            } else {
-                alert('Lütfen formdaki hataları düzeltin!');
-            }
-        }
-    }
-}).mount('#app');
-</script>
+    <!-- İletişim -->
+    <section id="iletisim" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">İletişim</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="app" class="card shadow-sm p-4 info-card"> <!-- Vue.js mount noktası -->
+                        <form @submit.prevent="submitForm" id="contactForm" novalidate> <!-- novalidate eklendi -->
+                            <!-- Basic Information -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Adınız</label>
+                                <input type="text" class="form-control" id="name" v-model="form.name" placeholder="Adınız ve soyadınız">
+                                <span class="text-danger" v-if="errors.name">{{ errors.name }}</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-posta</label>
+                                <input type="text" inputmode="email" class="form-control" id="email" v-model="form.email" placeholder="E-posta adresiniz"> <!-- type="text" inputmode="email" -->
+                                <span class="text-danger" v-if="errors.email">{{ errors.email }}</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefon</label>
+                                <input type="text" inputmode="tel" class="form-control" id="phone" v-model="form.phone" placeholder="Telefon numaranız (örn: 05xxxxxxxxx)"> <!-- type="text" inputmode="tel" -->
+                                <span class="text-danger" v-if="errors.phone">{{ errors.phone }}</span>
+                            </div>
+                            
+                            <!-- Gender Radio Buttons -->
+                            <div class="mb-3">
+                                <label class="form-label">Cinsiyet</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="male" value="male" v-model="form.gender">
+                                    <label class="form-check-label" for="male">Erkek</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="female" value="female" v-model="form.gender">
+                                    <label class="form-check-label" for="female">Kadın</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="other" value="other" v-model="form.gender">
+                                    <label class="form-check-label" for="other">Diğer</label>
+                                </div>
+                                <span class="text-danger" v-if="errors.gender">{{ errors.gender }}</span>
+                            </div>
+                            
+                            <!-- Age Select -->
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Yaş Aralığı</label>
+                                <select class="form-select" id="age" v-model="form.age">
+                                    <option value="" disabled>Seçiniz</option>
+                                    <option value="18-25">18-25</option>
+                                    <option value="26-35">26-35</option>
+                                    <option value="36-45">36-45</option>
+                                    <option value="46+">46+</option>
+                                </select>
+                                <span class="text-danger" v-if="errors.age">{{ errors.age }}</span>
+                            </div>
+                            
+                            <!-- Checkbox -->
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter" v-model="form.newsletter">
+                                <label class="form-check-label" for="newsletter">Bültenimize kayıt olmak istiyorum</label>
+                            </div>
+                            
+                            <!-- Message Textarea -->
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mesajınız</label>
+                                <textarea class="form-control" id="message" rows="5" v-model="form.message" placeholder="Mesajınızı buraya yazın"></textarea>
+                                <span class="text-danger" v-if="errors.message">{{ errors.message }}</span>
+                            </div>
+                            
+                            <!-- File Upload -->
+                            <div class="mb-3">
+                                <label for="file" class="form-label">Dosya Yükle (Opsiyonel)</label>
+                                <input type="file" class="form-control" id="file" @change="handleFileUpload">
+                                <span class="text-danger" v-if="errors.file">{{ errors.file }}</span>
+                            </div>
+                            
+                            <!-- Validation Buttons -->
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-secondary btn-lg flex-grow-1" @click="validateBasic">Temel Doğrulama</button>
+                                <button type="button" class="btn btn-info btn-lg flex-grow-1" @click="validateAdvanced">Gelişmiş Doğrulama</button>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-urfa btn-lg w-100 mt-2">Gönder</button>
+                        </form>
+                        
+                        <!-- Validation Results -->
+                        <div v-if="validationResults" class="mt-3 p-3 rounded" :class="{'bg-success-subtle text-success-emphasis': validationResults.isValid, 'bg-danger-subtle text-danger-emphasis': !validationResults.isValid}">
+                            <h5>Doğrulama Sonuçları ({{ validationResults.type }}):</h5> <!-- validationResults.type eklendi -->
+                            <ul class="list-unstyled mb-0">
+                                <li v-for="(result, field) in validationResults.details" :key="field" class="mb-1">
+                                   <i :class="result.valid ? 'bi bi-check-circle-fill text-success' : 'bi bi-x-circle-fill text-danger'"></i>
+                                    <strong>{{ field.charAt(0).toUpperCase() + field.slice(1) }}:</strong> {{ result.message }} <!-- Alan adını büyük harfle başlat -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="text-center">
@@ -446,32 +348,302 @@ createApp({
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="social-links mb-3">
-                        <a href="https://github.com/TheJeynn" target="_blank" class="text-white me-3"><i class="bi bi-github"></i></a>
-                        <a href="https://instagram.com/burak_kahveci00" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/burak-kahveci-" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/TheJeynn" target="_blank" class="text-white me-3 fs-4"><i class="bi bi-github"></i></a>
+                        <a href="https://instagram.com/burak_kahveci00" target="_blank" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/burak-kahveci-" target="_blank" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
                     </div>
-                    <p class="mb-0">© 2023 Tüm hakları saklıdır.</p>
+                    <p class="mb-0">© 2024 Tüm hakları saklıdır.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS + Özel JS -->
+    <!-- Bootstrap JS Bundle (Popper included) - Vue ve diğer özel scriptlerden ÖNCE yüklenmeli -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Vue.js - Bootstrap JS'den SONRA, özel scriptlerden ÖNCE -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Özel JavaScript Kodlarınız -->
     <script>
-        // Form gönderim işlemi
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Mesajınız gönderildi! En kısa sürede dönüş yapacağım.');
-            this.reset();
-        });
-        
-        // Navbar linklerine smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Vue.js Uygulaması (İletişim Formu için)
+        const { createApp, ref, reactive } = Vue;
+
+        createApp({
+            setup() {
+                const form = reactive({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    gender: '',
+                    age: '',
+                    newsletter: false,
+                    message: '',
+                    file: null
+                });
+
+                const errors = reactive({});
+                const validationResults = ref(null);
+
+                const handleFileUpload = (event) => {
+                    const file = event.target.files[0];
+                    form.file = file;
+                    if (file && file.size > 5 * 1024 * 1024) {
+                        errors.file = 'Dosya boyutu 5MB\'den büyük olamaz.';
+                    } else {
+                        delete errors.file;
+                    }
+                };
+
+                const fieldRules = {
+                    name: [
+                        { validate: val => !!val && val.trim() !== '', message: 'Ad alanı zorunludur.' },
+                        { validate: val => val.trim().length >= 3, message: 'Ad en az 3 karakter olmalıdır.' }
+                    ],
+                    email: [
+                        { validate: val => !!val && val.trim() !== '', message: 'E-posta alanı zorunludur.' },
+                        { validate: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()), message: 'Geçerli bir e-posta adresi girin.' }
+                    ],
+                    phone: [
+                        { validate: val => !!val && val.trim() !== '', message: 'Telefon alanı zorunludur.' },
+                        { validate: val => /^(05\d{9})$|^(\+905\d{9})$|^5\d{9}$/.test(val.replace(/\s+/g, '')), message: 'Geçerli bir telefon numarası girin (örn: 05xxxxxxxxx).' }
+                    ],
+                    gender: [ { validate: val => !!val, message: 'Cinsiyet seçimi zorunludur.' } ],
+                    age: [ { validate: val => !!val, message: 'Yaş aralığı seçimi zorunludur.' } ],
+                    message: [
+                        { validate: val => !!val && val.trim() !== '', message: 'Mesaj alanı zorunludur.' },
+                        { validate: val => val.trim().length >= 10, message: 'Mesaj en az 10 karakter olmalıdır.' }
+                    ]
+                };
+
+                const validateSingleField = (fieldName) => {
+                    const value = form[fieldName];
+                    const rules = fieldRules[fieldName];
+                    if (rules) {
+                        for (const rule of rules) {
+                            if (!rule.validate(value, form)) {
+                                errors[fieldName] = rule.message;
+                                return false;
+                            }
+                        }
+                    }
+                    if (fieldName === 'file' && form.file && !errors.file) {
+                        if (form.file.size > 5 * 1024 * 1024) {
+                            errors.file = 'Dosya boyutu 5MB\'den büyük olamaz.';
+                            return false;
+                        }
+                    }
+                    delete errors[fieldName];
+                    return true;
+                };
+
+                const runValidationForFields = (fieldsToValidate, validationType) => {
+                    Object.keys(errors).forEach(key => delete errors[key]);
+                    let overallIsValid = true;
+                    const details = {};
+                    fieldsToValidate.forEach(fieldKey => {
+                        const isValid = validateSingleField(fieldKey);
+                        if (!isValid) overallIsValid = false;
+                        details[fieldKey] = {
+                            valid: isValid,
+                            message: errors[fieldKey] || ((form[fieldKey] && form[fieldKey].toString().trim() !== '') || (fieldKey === 'file' && form.file) ? 'Geçerli' : 'Girilmedi/Seçilmedi')
+                        };
+                    });
+                    if (fieldsToValidate.includes('file')) {
+                        if (!errors.file) {
+                            details.file = {
+                                valid: true,
+                                message: form.file ? `Dosya: ${form.file.name}` : 'Dosya seçilmedi (Opsiyonel)'
+                            };
+                        } else {
+                            // `details.file` should already be set with the error message by `validateSingleField`
+                        }
+                    }
+                    validationResults.value = {
+                        type: validationType,
+                        isValid: overallIsValid,
+                        details
+                    };
+                    return overallIsValid;
+                };
+
+                const validateBasic = () => {
+                    runValidationForFields(['name', 'email'], 'Temel');
+                };
+
+                const validateAdvanced = () => {
+                    runValidationForFields(['name', 'email', 'phone', 'gender', 'age', 'message', 'file'], 'Gelişmiş');
+                };
+
+                const submitForm = () => {
+                    if (runValidationForFields(['name', 'email', 'phone', 'gender', 'age', 'message', 'file'], 'Gönderme')) {
+                        alert('Form başarıyla gönderildi! (Konsola bakın)');
+                        console.log('Form Data:', JSON.parse(JSON.stringify(form)));
+                        Object.keys(form).forEach(key => {
+                            if (typeof form[key] === 'boolean') form[key] = false;
+                            else if (key === 'file') {
+                                form[key] = null;
+                                const fileInput = document.getElementById('file');
+                                if (fileInput) fileInput.value = null;
+                            } else form[key] = '';
+                        });
+                        Object.keys(errors).forEach(key => delete errors[key]);
+                        validationResults.value = null;
+                    } else {
+                        alert('Lütfen formdaki hataları düzeltin!');
+                    }
+                };
+
+                return {
+                    form, errors, validationResults, handleFileUpload,
+                    validateBasic, validateAdvanced, submitForm
+                };
+            }
+        }).mount('#app');
+
+        // TMDB API Entegrasyonu ve Sayfa İçi Etkileşimler
+        document.addEventListener('DOMContentLoaded', function() {
+            const TMDB_API_KEY = '486da789f1daae2af5006f8a29f08103'; // GERÇEK API ANAHTARINIZI GİZLEYİN!
+            const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
+            
+            async function fetchPopularMovies() {
+                try {
+                    const response = await fetch(`${TMDB_BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}&language=tr-TR&page=1`);
+                    if (!response.ok) {
+                        console.error("Popüler filmler API'den alınamadı:", response.status, await response.text());
+                        return [];
+                    }
+                    const data = await response.json();
+                    return data.results.slice(0, 8);
+                } catch (error) {
+                    console.error('Popüler filmler yüklenirken hata oluştu:', error);
+                    return [];
+                }
+            }
+            
+            async function displayMovies() {
+                const moviesContainer = document.getElementById('movies-container');
+                const loadingSpinner = document.getElementById('loading-spinner');
+                if (!moviesContainer || !loadingSpinner) {
+                    console.error("Gerekli HTML elementleri (movies-container veya loading-spinner) bulunamadı.");
+                    if (loadingSpinner) loadingSpinner.style.display = 'none';
+                    if (moviesContainer) moviesContainer.innerHTML = '<p class="text-danger text-center">Film listesi yüklenemedi.</p>';
+                    return;
+                }
+                moviesContainer.innerHTML = '';
+                loadingSpinner.style.display = 'block';
+                const movies = await fetchPopularMovies();
+                loadingSpinner.style.display = 'none';
+                if (movies.length === 0) {
+                    moviesContainer.innerHTML = `<div class="col-12 text-center py-5"><div class="alert alert-warning" role="alert">Popüler filmler yüklenemedi.</div></div>`;
+                    return;
+                }
+                moviesContainer.innerHTML = movies.map(movie => `
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card movie-card shadow-sm h-100">
+                            <img src="${movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/500x750?text=Poster+Bulunamadı'}" 
+                                 class="card-img-top movie-poster" 
+                                 alt="${movie.title || 'Film Posteri'}"
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/500x750?text=Poster+Yüklenemedi';">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">${movie.title || 'Başlık Yok'}</h5>
+                                <p class="card-text text-muted small mb-2">${movie.release_date ? new Date(movie.release_date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Yayın Tarihi Bilinmiyor'}</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <div class="rating">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <span class="fw-bold">${movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-primary" 
+                                            onclick="showMovieDetails(${movie.id})">
+                                        Detaylar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            window.showMovieDetails = async function(movieId) {
+                try {
+                    const existingModalElement = document.getElementById('movieModal');
+                    if (existingModalElement) {
+                        const modalInstance = bootstrap.Modal.getInstance(existingModalElement);
+                        if (modalInstance) modalInstance.dispose();
+                        existingModalElement.remove();
+                    }
+                    const response = await fetch(`${TMDB_BASE_URL}/movie/${movieId}?api_key=${TMDB_API_KEY}&language=tr-TR&append_to_response=credits`);
+                    if (!response.ok) {
+                        console.error("Film detayları API'den alınamadı:", response.status, await response.text());
+                        alert("Film detayları yüklenemedi.");
+                        return;
+                    }
+                    const movie = await response.json();
+                    const director = movie.credits?.crew?.find(p => p.job === 'Director');
+                    const cast = movie.credits?.cast?.slice(0, 5).map(c => c.name).join(', ') || 'Belirtilmemiş';
+                    const modalHTML = `
+                        <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="movieModalLabel">${movie.title || 'Başlık Yok'}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                                                <img src="${movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/500x750?text=Poster+Bulunamadı'}" 
+                                                     class="img-fluid rounded shadow-sm" style="max-height: 500px;"
+                                                     alt="${movie.title || 'Film Posteri'} Posteri"
+                                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x750?text=Poster+Yüklenemedi';">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p><strong>Yayın Tarihi:</strong> ${movie.release_date ? new Date(movie.release_date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Bilinmiyor'}</p>
+                                                <p><strong>Süre:</strong> ${movie.runtime ? movie.runtime + ' dakika' : 'Bilinmiyor'}</p>
+                                                <p><strong>Puan:</strong> ${movie.vote_average ? movie.vote_average.toFixed(1) + '/10' : 'N/A'} (${movie.vote_count} oy)</p>
+                                                <p><strong>Türler:</strong> ${movie.genres?.map(g => g.name).join(', ') || 'Belirtilmemiş'}</p>
+                                                ${director ? `<p><strong>Yönetmen:</strong> ${director.name}</p>` : ''}
+                                                <p><strong>Oyuncular (İlk 5):</strong> ${cast}</p>
+                                                <h6 class="mt-3">Özet</h6>
+                                                <p>${movie.overview || 'Özet bulunamadı.'}</p>
+                                                ${movie.homepage ? `<p><a href="${movie.homepage}" target="_blank" class="btn btn-sm btn-outline-info mt-2">Resmi Web Sitesi <i class="bi bi-box-arrow-up-right"></i></a></p>` : ''}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="https://www.themoviedb.org/movie/${movie.id}-${movie.title ? movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') : movie.id}" target="_blank" class="btn btn-primary btn-sm">TMDB'de Görüntüle <i class="bi bi-film"></i></a>
+                                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    document.body.insertAdjacentHTML('beforeend', modalHTML);
+                    const modalElement = document.getElementById('movieModal');
+                    if (!modalElement) return console.error("Modal elementi DOM'a eklenemedi.");
+                    const bootstrapModal = new bootstrap.Modal(modalElement);
+                    bootstrapModal.show();
+                    modalElement.addEventListener('hidden.bs.modal', () => {
+                        bootstrapModal.dispose();
+                        modalElement.remove();
+                    }, { once: true });
+                } catch (error) {
+                    console.error('Film detayları gösterilirken hata:', error);
+                    alert('Film detayları gösterilemedi.');
+                }
+            };
+
+            displayMovies();
+
+            document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        console.warn(`Smooth scroll hedefi bulunamadı: ${targetId}`);
+                    }
                 });
             });
         });
